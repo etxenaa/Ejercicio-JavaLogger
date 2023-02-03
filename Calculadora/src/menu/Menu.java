@@ -1,8 +1,19 @@
 package menu;
 import java.util.Scanner;
+/**
+ * 
+ * @author ikaslea
+ * @version 1.0
+ *
+ */
 public class Menu {
     private static Scanner teclado = new Scanner(System.in);
     
+    /**
+     * Pide al usuario los numeros para las operaciones
+     * 
+     * @return devuelve el array con los numeros introducidos
+     */
     public int[] pedirNumeros(){
         int[] ret = new int[2];
         System.out.print ("Operando 1: ");
@@ -12,6 +23,12 @@ public class Menu {
         return ret;
     }
     
+    /**
+     * 
+     * Controla que el usuario introduzca solo los signos de las operaciones
+     * 
+     * @return Devuelve un string vacio
+     */
     public String menuOpciones() {
         String ret = "";
         do {
@@ -24,11 +41,16 @@ public class Menu {
                 return ret;
     }
     
+    /**
+     * Repite la ejucion del programa
+     * 
+     * @return Devulve un booleano
+     */
     public boolean repetir(){
         boolean ret = false;
         String respuesta;
         do {
-            System.out.print ("¿Desea continuar trabajando con la calculadora? [s / n]");
+            System.out.print ("ï¿½Desea continuar trabajando con la calculadora? [s / n]");
             respuesta = teclado.next();
         } while (!((respuesta.equalsIgnoreCase("s")) || (respuesta.equalsIgnoreCase("n"))
                     ));
